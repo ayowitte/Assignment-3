@@ -12,7 +12,7 @@ public class MyProcessingSketch extends PApplet
 	ControlP5 cp5;
 	int c = color(100);
 	
-	int mode = 0;
+	int mode;
 
 	
 	
@@ -57,8 +57,6 @@ public class MyProcessingSketch extends PApplet
 			    {
 			      line(mouseX,mouseY,pmouseX,pmouseY);
 			    }//end mousePressed
-			    
-			    break;
 		  }//end case 1
 	  
 		  case 2:

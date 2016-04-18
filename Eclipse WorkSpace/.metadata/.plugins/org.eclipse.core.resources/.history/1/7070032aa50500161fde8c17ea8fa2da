@@ -29,6 +29,12 @@ public class MyProcessingSketch extends PApplet
 	    
 	    cp5 = new ControlP5(this);
 	    cp5.addColorWheel("c",10,10,200).setRGB(color(128,0,255)); 
+	    
+	    stroke(255);
+	    if (mousePressed) 
+	    {
+	      line(mouseX,mouseY,pmouseX,pmouseY);
+	    }
 	}//end setup
   
 	
@@ -57,8 +63,6 @@ public class MyProcessingSketch extends PApplet
 			    {
 			      line(mouseX,mouseY,pmouseX,pmouseY);
 			    }//end mousePressed
-			    
-			    break;
 		  }//end case 1
 	  
 		  case 2:
