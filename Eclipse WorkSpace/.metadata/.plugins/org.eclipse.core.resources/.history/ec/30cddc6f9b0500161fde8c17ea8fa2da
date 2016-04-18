@@ -18,7 +18,6 @@ public class MyProcessingSketch extends PApplet
 	
 	public void setup() 
 	{
-		background(0);
 	    size(1920,1080);
 	    smooth();
 	    
@@ -28,7 +27,11 @@ public class MyProcessingSketch extends PApplet
 	    //song.play();
 	    
 	    cp5 = new ControlP5(this);
-	    cp5.addColorWheel("c",10,10,200).setRGB(color(128,0,255)); 
+	    cp5.addColorWheel("c",10,10,200).setRGB(color(128,0,255));
+	    
+	    fill(c);
+		  rect(0,240,1919,839);
+		  println(cp5.get(ColorWheel.class,"c").getRGB()); 
 	}//end setup
   
 	
@@ -42,24 +45,19 @@ public class MyProcessingSketch extends PApplet
   
   public void draw() 
   {
-	  	stroke(255);
+	  stroke(255);
 	    if (mousePressed) 
 	    {
 	      line(mouseX,mouseY,pmouseX,pmouseY);
 	    }//end mousePressed
-	    
 	  switch(mode)
 	  {
 		  case 1:
 		  {
-			    stroke(255);
-			    if (mousePressed) 
-			    {
-			      line(mouseX,mouseY,pmouseX,pmouseY);
-			    }//end mousePressed
-			    fill(c);
-				rect(0,240,1919,839);
-				println(cp5.get(ColorWheel.class,"c").getRGB());
+			  
+			  
+			  
+			  
 		  }//end case 1
 	  
 		  case 2:
