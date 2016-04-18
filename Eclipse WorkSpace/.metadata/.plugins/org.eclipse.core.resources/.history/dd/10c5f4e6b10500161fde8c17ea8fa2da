@@ -69,8 +69,6 @@ public class MyProcessingSketch extends PApplet
 	  
 		  case 3:
 		  {
-			  
-			  break;
 		  }
 	  }//end switch
 	  
