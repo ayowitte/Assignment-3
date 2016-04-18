@@ -30,12 +30,6 @@ public class MyProcessingSketch extends PApplet
 	    
 	    cp5 = new ControlP5(this);
 	    cp5.addColorWheel("c",10,10,200).setRGB(color(128,0,255)); 
-	    
-	    
-	    fill(c);
-		rect(0,240,1919,839);
-		println(cp5.get(ColorWheel.class,"c").getRGB());
-		
 	}//end setup
   
 	
@@ -43,7 +37,6 @@ public class MyProcessingSketch extends PApplet
   public static void main(String args[]) 
   {
 	    PApplet.main(new String[] { "--present", "MyProcessingSketch" });
-	    
   }//end main
   
   
@@ -59,18 +52,20 @@ public class MyProcessingSketch extends PApplet
 	  
   }//end keyPressed
   */
-  
+  fill(c);
+	rect(0,240,1919,839);
+	println(cp5.get(ColorWheel.class,"c").getRGB());
   
   public void draw() 
   {
-
+	    
+		
 		stroke(255);
 	    if (mousePressed) 
 	    {
 	    	stroke(255);
 	    	line(mouseX,mouseY,pmouseX,pmouseY);
 	    	fill(255);
-	    	
 	    }//end mousePressed
 	    
 	  switch(mode)
@@ -79,33 +74,29 @@ public class MyProcessingSketch extends PApplet
 		  case 1:
 		  {
 			    
-			    break;
-			    
+			    break; //end case 1
 		  }//end case 1
 	  
 		  
 		  case 2:
 		  {
 			  
-			  break;
-			  
-		  } //end case 2
+			  break; //end case 2
+		  }
 	  
 		  
 		  case 3:
 		  {
 			  
-			  break;
-			  
-		  } //end case 3
+			  break; //end case 3
+		  }
 		  
 		  
 		  default:
 		  {
 			  
-			  break;
-			  
-		  } //end default
+			  break; //end default
+		  }
 		  
 	  }//end switch
 	  
