@@ -48,9 +48,9 @@ public class MyProcessingSketch extends PApplet
   
   
   
-
+  /*
   //detects input from User
-  public void keyPressed()
+  void keyPressed()
   {
 	  if(key>='0' && key<='9')
 	  {
@@ -58,7 +58,7 @@ public class MyProcessingSketch extends PApplet
 	  }//end if
 	  
   }//end keyPressed
-
+  */
   
   
   public void draw() 
