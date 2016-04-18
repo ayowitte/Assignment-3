@@ -58,25 +58,23 @@ public class MyProcessingSketch extends PApplet
 			      line(mouseX,mouseY,pmouseX,pmouseY);
 			    }//end mousePressed
 			    
-			    break; //end case 1
+			    break;
 		  }//end case 1
 	  
 		  case 2:
 		  {
 			  
-			  break; //end case 2
+			  break;
 		  }
 	  
 		  case 3:
 		  {
 			  
-			  break; //end case 3
+			  break;
 		  }
 		  
 		  default:
 		  {
-			  
-			  break; //end default
 		  }
 	  }//end switch
 	  
