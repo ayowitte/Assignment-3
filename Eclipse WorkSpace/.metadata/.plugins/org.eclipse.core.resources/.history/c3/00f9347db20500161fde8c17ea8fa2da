@@ -48,9 +48,10 @@ public class MyProcessingSketch extends PApplet
 	    
 	  switch(mode)
 	  {
-	  
 		  case 1:
 		  {
+
+				
 				stroke(255);
 			    if (mousePressed) 
 			    {
@@ -60,29 +61,25 @@ public class MyProcessingSketch extends PApplet
 			    break; //end case 1
 		  }//end case 1
 	  
-		  
 		  case 2:
 		  {
 			  
 			  break; //end case 2
 		  }
 	  
-		  
 		  case 3:
 		  {
 			  
 			  break; //end case 3
 		  }
 		  
-		  
 		  default:
 		  {
 			  
 			  break; //end default
 		  }
-		  
 	  }//end switch
 	  
+
   }//end draw
-  
 }//end Sketch
