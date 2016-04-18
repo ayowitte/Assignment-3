@@ -45,18 +45,17 @@ public class MyProcessingSketch extends PApplet
 	    fill(c);
 		rect(0,240,1919,839);
 		println(cp5.get(ColorWheel.class,"c").getRGB());
-		
-		stroke(255);
-	    if (mousePressed) 
-	    {
-	      line(mouseX,mouseY,pmouseX,pmouseY);
-	    }//end mousePressed
 	    
 	  switch(mode)
 	  {
 	  
 		  case 1:
 		  {
+				stroke(255);
+			    if (mousePressed) 
+			    {
+			      line(mouseX,mouseY,pmouseX,pmouseY);
+			    }//end mousePressed
 			    
 			    break; //end case 1
 		  }//end case 1
