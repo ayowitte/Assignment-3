@@ -1,4 +1,3 @@
-//import external libraries
 import processing.core.*;
 import ddf.minim.*;
 import controlP5.*;
