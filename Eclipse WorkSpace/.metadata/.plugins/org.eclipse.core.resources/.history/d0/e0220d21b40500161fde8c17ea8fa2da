@@ -64,7 +64,7 @@ public class MyProcessingSketch extends PApplet
 	    if (mousePressed) 
 	    {
 	    	stroke(255);
-	    	line(mouseX,mouseY,pmouseX,pmouseY);
+	    	//line(mouseX,mouseY,pmouseX,pmouseY);
 	    	fill(255);
 	    }//end mousePressed
 	    
