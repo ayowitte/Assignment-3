@@ -79,7 +79,7 @@ public class MyProcessingSketch extends PApplet
 		  case 1:
 		  {
 			    
-			    break; //break out of case 1
+			    break;
 			    
 		  }//end case 1
 	  
@@ -87,7 +87,7 @@ public class MyProcessingSketch extends PApplet
 		  case 2:
 		  {
 			  
-			  break; //break out of case 2
+			  break;
 			  
 		  } //end case 2
 	  
@@ -95,7 +95,7 @@ public class MyProcessingSketch extends PApplet
 		  case 3:
 		  {
 			  
-			  break; //break out of case 3
+			  break;
 			  
 		  } //end case 3
 		  
@@ -103,7 +103,7 @@ public class MyProcessingSketch extends PApplet
 		  default:
 		  {
 			  
-			  break; //break out of default
+			  break;
 			  
 		  } //end default
 		  
