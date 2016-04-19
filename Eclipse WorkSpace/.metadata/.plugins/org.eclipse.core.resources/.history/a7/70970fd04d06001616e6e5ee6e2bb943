@@ -19,8 +19,7 @@ public class ConnectFour extends PApplet
 	public void setup()
 	{
 		size(700,600); 
-		ellipseMode(CORNER);
-		smooth();
+		ellipseMode(CORNER); 
 		
 		m = new Minim(this);
 	    song = m.loadFile("Asteroids Music.mp3");
