@@ -8,13 +8,10 @@ import ddf.minim.*;
 //creating the class
 public class ConnectFour extends PApplet
 {
-	//width of grid
+	//declaring variables
 	int width = 7;
-	//height of grid
 	int height= 6;
-	//blocksize
 	int blocksize =100; 
-	//declaring 2-D array
 	int[][]grid = new int [height][width]; 
 	int player =1; 
 	
@@ -159,7 +156,6 @@ public class ConnectFour extends PApplet
 
 			    	 if(grid [j] [i] > 0)
 			    	 {
-			    		 //colors for the chips
 			    		 fill(grid[j] [i] == 1?255:255, grid [j][i] == 2?255:0,0); 
 			    		 ellipse (i*blocksize,j*blocksize,blocksize,blocksize);
 			    	 }
