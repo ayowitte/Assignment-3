@@ -1,7 +1,5 @@
 //import external libraries
-//processing
 import processing.core.*;
-//music
 import ddf.minim.*;
 
 
@@ -115,7 +113,7 @@ public class ConnectFour extends PApplet
 		  
 
 	//checks where to drop the chip
-	int nextSlot(int x)
+	int nextSpace(int x)
 	{
 		for(int y = height - 1; y >= 0; y--)
 			
@@ -131,7 +129,7 @@ public class ConnectFour extends PApplet
 	//allows mouse input to be recognized
 	public void mousePressed()
 	{
-		int x = mouseX /blocksize,  y = nextSlot(x); 
+		int x = mouseX /blocksize,  y = nextSpace(x); 
 		if(y>=0)
 		{
 			grid[y] [x] = player; 
