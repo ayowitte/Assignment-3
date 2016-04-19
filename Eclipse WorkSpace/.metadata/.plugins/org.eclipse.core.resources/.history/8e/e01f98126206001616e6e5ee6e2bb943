@@ -1,12 +1,10 @@
-//import external libraries
 import processing.core.*;
 import ddf.minim.*;
 
 
-//creating the class
 public class ConnectFour extends PApplet
 {
-	//declaring variables
+	
 	int width = 7;
 	int height= 6;
 	int blocksize =100; 
@@ -17,41 +15,37 @@ public class ConnectFour extends PApplet
 	AudioPlayer song;
 	
 	
-	//setup
+	
 	public void setup()
 	{
-		//dimensions of the screen
 		size(700,600); 
-		//modifies location from which ellipses are drawn
 		ellipseMode(CORNER);
-		//draws geometry with anti-aliased edges
 		smooth();
 		
-		//load in song and plays it
 		m = new Minim(this);
 	    song = m.loadFile("Asteroids Music.mp3");
 	    song.play();
 	}
 	
 	
-	//dimensions for the chips
+	
 	int chip(int y, int x) 
 	{
 		  return (y < 0 || x < 0|| y >= height || x >= width ) ?0:grid[y][x]; 
 	}
 	
 	
-	//allows the program to run as a Java Application
+	
 	public static void main(String args[]) 
 	{
 	    PApplet.main(new String[] { "--present", "ConnectFour" });
 	}
 	
 	
-	//Checking if the win condition has been met
+	
 	int Winner() 
 	{ 
-		//checks the rows
+		//check the rows
 		for(int y = 0; y < height; y++)
 		
 			for(int x = 0; x < width; x++)
@@ -66,7 +60,7 @@ public class ConnectFour extends PApplet
 		
 		
 
-		// checks the columns
+		// check the columns
 		for(int y = 0; y < height; y++)
 		
 			for(int x = 0; x < width; x++)
@@ -80,7 +74,7 @@ public class ConnectFour extends PApplet
 		
 		
 		    
-		// checks the diagonals
+		// check the diagonals
 		for(int y = 0; y < height; y++)
 		
 			for(int x = 0; x < width; x++) 
@@ -97,14 +91,14 @@ public class ConnectFour extends PApplet
 		
 		
 		    
-		  //checks for a tie
+		  //check for a tie
 		  for(int y = 0; y < height; y++)
 		  
 			  for(int x = 0; x < width; x++)
 			  
 				  if(chip(y,x)==0) return 0; //winner 
 				  
-				     return -1; //tie
+				     return -1; // tie
 				  
 			  
 		  
@@ -112,7 +106,7 @@ public class ConnectFour extends PApplet
 		  
 		  
 
-	//checks where to drop the chip
+		// check where to drop the piece 
 	int nextSpace(int x)
 	{
 		for(int y = height - 1; y >= 0; y--)
@@ -126,7 +120,7 @@ public class ConnectFour extends PApplet
 		
 		
 		
-	//allows mouse input to be recognized
+
 	public void mousePressed()
 	{
 		int x = mouseX /blocksize,  y = nextSpace(x); 
@@ -141,14 +135,12 @@ public class ConnectFour extends PApplet
 	
 	public void draw()
 	{
-		//as long as there is no winner
 		if(Winner() ==0)
 		{
 			  for(int j =0; j<height; j++)
 				  
 			     for(int i =0; i<width; i++)
 			     {
-			    	 //background
 			    	 fill(255); 
 			    	 rect(i * blocksize,j*blocksize,blocksize,blocksize); // grid
 
@@ -159,20 +151,13 @@ public class ConnectFour extends PApplet
 			    	 }
 			     }
 		} 
-		
-		//option to restart
-		else
+		else // restart 
 		{
-			//changes the background
 			background(0); 
-			//font is white
 			fill(255);
-			//sets test size
 			textSize(16);
-			//displays winner
 			text("Winner: Player " +Winner() + "\n Press Space to Restart", 250, 300); 
-			
-			//allows 'space' to be recognized as input
+			   
 			if(keyPressed && key == ' ')
 			{
 			    player =1;
