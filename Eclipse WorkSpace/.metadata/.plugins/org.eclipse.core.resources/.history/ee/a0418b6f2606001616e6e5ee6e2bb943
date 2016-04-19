@@ -1,0 +1,39 @@
+import processing.core.*;
+
+
+
+public class ConnectFour extends PApplet
+{
+	
+	int w=7;
+	int h= 6;
+	int blocksize = 100;
+	
+	
+	public void setup()
+	{
+		size(1920,1080);
+		ellipseMode(CORNER);
+		background(0);
+	}
+	
+	public static void main(String args[]) 
+	{
+	    PApplet.main(new String[] { "--present", "ConnectFour" });
+	}
+	
+	
+	public void draw()
+	{
+		for(int j=0;j<h;j++)
+		{
+			for(int i=0;i<w;i++)
+			{
+				fill(255);
+				rect(i*blocksize,j*blocksize,blocksize,blocksize);
+			}
+		}
+	}
+	
+	
+}

@@ -1,0 +1,172 @@
+import processing.core.*;
+import ddf.minim.*;
+
+
+public class ConnectFour extends PApplet
+{
+	
+	int width = 70;
+	int height= 60;
+	int blocksize =100; 
+	int[][]grid = new int [height][width]; 
+	int player =1; 
+	
+	Minim m;
+	AudioPlayer song;
+	
+	
+	
+	public void setup()
+	{
+		size(700,600); 
+		ellipseMode(CORNER); 
+		
+		m = new Minim(this);
+	    song = m.loadFile("Asteroids Music.mp3");
+	    song.play();
+	}
+	
+	
+	
+	int chip(int y, int x) 
+	{
+		  return (y < 0 || x < 0|| y >= height || x >= width ) ?0:grid[y][x]; 
+	}
+	
+	
+	
+	public static void main(String args[]) 
+	{
+	    PApplet.main(new String[] { "--present", "ConnectFour" });
+	}
+	
+	
+	
+	int getWinner() 
+	{ 
+		//check the rows
+		for(int y = 0; y<height; y++)
+		
+			for(int x=0;x<width;x++)
+			
+			    if (chip(y,x) !=0 && chip(y,x) == chip(y,x+1) 
+			       && chip(y,x) == chip(y,x+2)
+			       && chip(y,x) == chip(y,x+3)) 
+			    	return chip(y,x);
+			
+		
+	
+		
+		
+
+		// check the columns
+		for(int y = 0; y<height; y++)
+		
+			for(int x=0;x<width;x++)
+			
+			    if(chip(y,x) !=0 && chip(y,x)==chip(y+1,x) 
+			       && chip(y,x)==chip(y+2,x)
+			       &&chip(y,x)==chip(y+3,x)) 
+			       return chip(y,x);
+			
+		
+		
+		
+		    
+		// check the diagonals
+		for(int y = 0; y<height; y++)
+		
+			for(int x=0;x<width;x++) 
+			
+				for (int d= -1; d<= 1; d+=2)
+				
+				     if(chip(y,x) !=0  && chip(y,x) == chip(y+1*d,x+1) 
+				        && chip(y,x) == chip(y+2*d,x+2) 
+				        && chip(y,x) == chip(y+3*d,x+3)) 
+				        return chip(y,x);
+				
+			
+		
+		
+		
+		    
+		  //check for a tie
+		  for(int y = 0; y<height; y++)
+		  
+			  for(int x=0;x<width;x++)
+			  
+				  if (chip(y,x)==0) return 0; //winner 
+				  
+				     return -1; // tie
+				  
+			  
+		  
+	}
+		  
+		  
+
+		// check where to drop the piece 
+	int nextSpace(int x)
+	{
+		for(int y = height-1; y>=0; y--)
+			
+		 if (grid[y] [x] == 0)
+			  
+			   return y;
+			   return -1;
+			  
+	}
+		
+		
+		
+
+	public void mousePressed()
+	{
+		int x = mouseX /blocksize,  y = nextSpace(x); 
+		if(y>=0)
+		{
+			grid[y] [x] = player; 
+				player = player == 1?2:1; 
+		 }
+	}
+	
+	
+	
+	public void draw()
+	{
+		if(getWinner() ==0)
+		{
+			  for(int j =0; j<height; j++)
+				  
+			     for(int i =0; i<width; i++)
+			     {
+			    	 fill(255); 
+			    	 rect(i * blocksize,j*blocksize,blocksize,blocksize); // grid
+
+			    	 if(grid [j] [i] > 0)
+			    	 {
+			    		 fill(grid[j] [i] == 1?255:255, grid [j][i] == 2?255:0,0); 
+			    		 ellipse (i*blocksize,j*blocksize,blocksize,blocksize);
+			    	 }
+			     }
+		} 
+		else // restart 
+		{
+			background(0); 
+			fill(255); 
+			text("Winner: " +getWinner() + ". space restarts", width/2,height/2); 
+			   
+			if(keyPressed && key == ' ')
+			{
+			    player =1;
+			    for(int y = 0; y<height; y++)
+			    		
+			    	for(int x=0;x<width;x++) 
+			    			
+			    		grid [y] [x] = 0; 
+			 }
+		}
+	
+	
+	}
+}
