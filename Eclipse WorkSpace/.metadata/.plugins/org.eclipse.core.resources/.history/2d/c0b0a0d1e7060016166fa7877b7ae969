@@ -43,7 +43,6 @@ public class ConnectFour extends PApplet
 	int chip(int y, int x) 
 	{
 		//knows if piece is off the board, if so, returns 0, otherwise returns grid
-		//new function i learned is the ?operator; works like an if statement but as an expression
 		return (y < 0 || x < 0|| y >= height || x >= width ) ?0:grid[y][x]; 
 	}
 	
