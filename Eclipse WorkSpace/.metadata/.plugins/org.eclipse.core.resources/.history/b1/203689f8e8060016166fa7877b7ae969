@@ -32,7 +32,7 @@ public class ConnectFour extends PApplet
 		//draws geometry with anti-aliased edges
 		smooth();
 		
-		//loads in song and plays it
+		//load in song and plays it
 		m = new Minim(this);
 	    song = m.loadFile("Asteroids Music.mp3");
 	    song.play();
