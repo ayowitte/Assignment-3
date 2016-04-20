@@ -42,8 +42,7 @@ public class ConnectFour extends PApplet
 	//dimensions for the chips
 	int chip(int y, int x) 
 	{
-		//knows if piece is off the board, if so, returns 0, otherwise returns grid
-		return (y < 0 || x < 0|| y >= height || x >= width ) ?0:grid[y][x]; 
+		  return (y < 0 || x < 0|| y >= height || x >= width ) ?0:grid[y][x]; 
 	}
 	
 	
@@ -62,7 +61,6 @@ public class ConnectFour extends PApplet
 		
 			for(int x = 0; x < width; x++)
 			
-				//if position is not empty and chips are equal to the right chip
 			    if (chip(y,x) !=0 && chip(y,x) == chip(y,x + 1) 
 			       	&& chip(y,x) == chip(y,x + 2)
 			       	&& chip(y,x) == chip(y,x + 3)) 
@@ -92,11 +90,11 @@ public class ConnectFour extends PApplet
 		
 			for(int x = 0; x < width; x++) 
 			
-				for (int m = -1; m <= 1; m +=2)
+				for (int d = -1; d <= 1; d +=2)
 				
-				     if(chip(y,x) !=0  && chip(y,x) == chip(y+1*m,x+1) 
-				        && chip(y,x) == chip(y+2*m,x+2) 
-				        && chip(y,x) == chip(y+3*m,x+3)) 
+				     if(chip(y,x) !=0  && chip(y,x) == chip(y+1*d,x+1) 
+				        && chip(y,x) == chip(y+2*d,x+2) 
+				        && chip(y,x) == chip(y+3*d,x+3)) 
 				        return chip(y,x);
 				
 			
@@ -109,11 +107,9 @@ public class ConnectFour extends PApplet
 		  
 			  for(int x = 0; x < width; x++)
 			  
-				  //winner
-				  if(chip(y,x)==0) return 0;
+				  if(chip(y,x)==0) return 0; //winner 
 				  
-		  			//tie
-				    return -1;
+				     return -1; //tie
 				  
 			  
 		  
@@ -159,7 +155,7 @@ public class ConnectFour extends PApplet
 			     {
 			    	 //background
 			    	 fill(255);
-			    	 //draws the grid
+			    	 //draws the board
 			    	 rect(i * blocksize,j*blocksize,blocksize,blocksize);
 
 			    	 if(grid [j] [i] > 0)
