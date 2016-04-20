@@ -154,9 +154,8 @@ public class ConnectFour extends PApplet
 			     for(int i =0; i<width; i++)
 			     {
 			    	 //background
-			    	 fill(255);
-			    	 //draws the board
-			    	 rect(i * blocksize,j*blocksize,blocksize,blocksize);
+			    	 fill(255); 
+			    	 rect(i * blocksize,j*blocksize,blocksize,blocksize); // grid
 
 			    	 if(grid [j] [i] > 0)
 			    	 {
@@ -174,7 +173,7 @@ public class ConnectFour extends PApplet
 			background(0); 
 			//font is white
 			fill(255);
-			//sets text size
+			//sets test size
 			textSize(16);
 			//displays winner
 			text("Winner: Player " +Winner() + "\n Press Space to Restart", 250, 300); 
